@@ -69,28 +69,33 @@ while(1):
         cv2.rectangle(img2, (int(boundRect[i][0]), int(boundRect[i][1])), (int(boundRect[i][0]+boundRect[i][2]), int(boundRect[i][1]+boundRect[i][3])), color, 2)
         img3[t:b, l:r, :] = frame[t:b, l:r, :]
 
-    cv2.namedWindow('frame', 0)
-    cv2.namedWindow('raw', 0)
-    cv2.namedWindow('2', 0)
-    cv2.namedWindow('img1', 0)
-    cv2.namedWindow('img2', 0)
-    cv2.namedWindow('img3', 0)
+#     cv2.namedWindow('frame', 0)
+#     cv2.namedWindow('raw', 0)
+#     cv2.namedWindow('2', 0)
+#     cv2.namedWindow('img1', 0)
+#     cv2.namedWindow('img2', 0)
+#     cv2.namedWindow('img3', 0)
 
-    cv2.resizeWindow('frame', 600, 600)
-    cv2.resizeWindow('raw', 600, 600)
-    cv2.resizeWindow('2', 600, 600)
-    cv2.resizeWindow('img1', 600, 600)
-    cv2.resizeWindow('img2', 600, 600)
-    cv2.resizeWindow('img3', 600, 600)
-    cv2.imshow('frame', frame)
-    cv2.imshow('raw', raw)
-    cv2.imshow('2', fgmask)
-    cv2.imshow('img1', img1)
-    cv2.imshow('img2', img2)
-    cv2.imshow('img3', img3)
+#     cv2.resizeWindow('frame', 600, 600)
+#     cv2.resizeWindow('raw', 600, 600)
+#     cv2.resizeWindow('2', 600, 600)
+#     cv2.resizeWindow('img1', 600, 600)
+#     cv2.resizeWindow('img2', 600, 600)
+#     cv2.resizeWindow('img3', 600, 600)
+#     cv2.imshow('frame', frame)
+#     cv2.imshow('raw', raw)
+#     cv2.imshow('2', fgmask)
+#     cv2.imshow('img1', img1)
+#     cv2.imshow('img2', img2)
+#     cv2.imshow('img3', img3)
 
-
-
+    cv2.imwrite('frame.jpg', frame)
+    cv2.imwrite('raw.jpg', raw)
+    cv2.imwrite('2.jpg', fgmask)
+    cv2.imwrite('img1.jpg', img1)
+    cv2.imwrite('img2.jpg', img2)
+    cv2.imwrite('img3.jpg', img3)
+    
     k = cv2.waitKey(wait) & 0xff
 
     if k == ord('q'):
